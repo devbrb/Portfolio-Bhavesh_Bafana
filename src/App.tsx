@@ -56,7 +56,7 @@ export default function App() {
     <>
       <div id="boot" aria-hidden="true">
         <div className="ring" id="ring"><span className="mark">B</span></div>
-        <p>BOOTING BUILDERS <b id="bootN">0</b>/8</p>
+        <p>ASSEMBLING THE CREW <b id="bootN">0</b>/8</p>
       </div>
 
       <div id="page">

@@ -27,7 +27,7 @@ export const PROFILE = {
   role: "Frontend Developer",
   summary:
     "Frontend Developer with 4.5+ years building scalable, high-performance React and Next.js apps for enterprise clients including Verizon, Honeywell and Mastercard.",
-  resume: "/React-developer-Bhavesh_Bafana.pdf",
+  resume: "/React-developer-BhaveshBafana.pdf",
   email: "bafanabrb@gmail.com",
   phone: "+91 8805798998",
   linkedin: "https://www.linkedin.com/in/bhaveshbafana",

@@ -60,7 +60,7 @@ a{color:inherit}
 /* ---------- hero (one viewport) ---------- */
 .hero{position:relative;height:100svh;min-height:600px;max-height:1100px;overflow:hidden;background:radial-gradient(ellipse 55% 60% at 50% 85%,rgba(255,46,46,.2),transparent 70%)}
 .nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:calc(18px + env(safe-area-inset-top,0px))}
-.logo{display:flex;align-items:center;gap:10px;font:600 14px/1 var(--body)}
+.logo{display:flex;align-items:center;gap:10px;font:600 14px/1 var(--body);text-decoration:none}
 .logo i{width:30px;height:30px;border-radius:8px;background:var(--accent);display:grid;place-items:center;font:15px/1 var(--display);color:#fff;font-style:normal}
 .pill{display:flex;gap:4px;padding:5px;border:1px solid var(--line);border-radius:999px;background:rgba(19,21,27,.7);backdrop-filter:blur(8px)}
 .pill a{text-decoration:none;font-size:13px;font-weight:500;padding:7px 14px;border-radius:999px;color:var(--muted)}
