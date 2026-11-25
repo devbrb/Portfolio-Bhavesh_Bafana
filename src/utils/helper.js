@@ -1,1 +1,0 @@
-export const cn = (...arr) => arr.filter(Boolean).join(" ");
