@@ -1,123 +1,143 @@
-import { details } from "framer-motion/client";
-import { Database, Gauge, PlayCircle, Zap } from "lucide-react";
-import React from "react";
+// All portfolio content lives here. Edit this file to update the site.
 
-interface contactType {
-  phone: string;
-  email: string;
-  linkedin: string;
-  github: string;
-  portfolio: string;
-}
-
-interface experienceType {
+export interface Job {
   company: string;
+  short: string; // label on the timeline bar
+  tile: string; // monogram on the card
   role: string;
-  period: string;
-  bullets: string[];
-}
-
-interface projectType {
-  name: string;
-  description: string;
-  tags: string[];
-  links: { href: string; label: string }[];
-  icon: React.ReactElement;
-  details: string[];
-}
-
-interface DataType {
-  name: string;
-  role: string;
-  contact: contactType;
+  from: string; // "YYYY-MM"
+  to?: string; // omit for the current job
   summary: string;
-  skills: string[];
-  experience: experienceType[];
-  projects: projectType[];
-  awards: string[];
+  projects: string[];
+  awards?: string[];
 }
 
-export const DATA = {
-  name: "Bhavesh Bafana",
-  role: "Frontend Developer - React | Javscript | Next.js | Redux | jQuery",
-  contact: {
-    phone: "+91 8805798998",
-    email: "bafanabrb@gmail.com",
-    linkedin: "https://www.linkedin.com/in/bhaveshbafana",
-    github: "https://github.com/Bhavesh210996/The-Fab-Thread-ecomm",
-    portfolio: "https://fabthread.vercel.app/",
-  },
+export interface Project {
+  title: string;
+  org?: string;
+  copy: string;
+  tags: string[];
+  links?: { label: string; href: string }[];
+  video?: boolean;
+}
+
+export const PROFILE = {
+  first: "Bhavesh",
+  last: "Bafana",
+  role: "Frontend Developer",
   summary:
-    "Creative and detail‑oriented Frontend Developer skilled in React, Next.js, Redux, and modern performance techniques. Focused on accessible, responsive, and high‑performance UIs.",
-  skills: [
-    "JavaScript (ES6+)",
-    "React, Next.js",
-    "Redux / Redux Toolkit",
-    "React Router, React Query",
-    "HTML5, CSS3, SCSS",
-    "Jest, React Testing Library",
-    "Supabase, REST APIs",
-    "Git, GitHub, Bitbucket, Jira",
-  ],
-  experience: [
-    {
-      company: "Tata Consultancy Services (TCS)",
-      role: "System Engineer — Frontend Developer",
-      period: "May 2022 – Present",
-      bullets: [
-        "Built and maintained responsive web apps with React, Next.js, Redux.",
-        "Optimized performance using hooks, memoization, lazy loading, and caching.",
-        "Integrated REST APIs and improved global state management.",
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Honeywell Building Solution (E‑Commerce Modules)",
-      description:
-        "Honeywell is B2B ecommerce platform which is built on two different technologies: AEM (Adobe Experience Manager) and SAP Hybris. Worked as a Frontend Developer, Gained practical experience in integrating commerce technologies to deliver a unified and seamless user experience",
-      tags: ["React", "Javascript", "Next.js", "Redux", "jQuery", "LESS"],
-      links: [],
-      icon: React.createElement(Gauge),
-      details: [
-        "Developed and optimized key e-commerce pages such as Product Listing Page, Cart, Product Detail Page (PDP), Checkout using React JS, Javascript, Redux.",
-        "Optimized Cart performance by implementing lazy loading for 300+ cart items, reducing load time from 15 minutes to 45 seconds.",
-        "Implemented virtual rendering and image lazy loading on the product listing page, reducing initial load time by 30%.",
-      ]
-    },
-    {
-      name: "Exelon Corporation",
-      description:
-        "Reusable media components; auto‑play on hover using HTML5 <video> API and React events.",
-      tags: ["React", "HTML5", "SCSS"],
-      links: [],
-      icon: React.createElement(PlayCircle),
-      details: [
-        "Built reusable and responsive components that support multimedia content using React and CSS.",
-        "Developed custom video card components where videos auto-play on hover and pause on mouse leave, leveraging the HTML5 <video> API and React event handling.",
-        "Enhanced interactivity using modern JS and media APIs, improving user engagement with seamless video previews in UI cards.",
-      ]
-    },
-    {
-      name: "Fab Thread — eCommerce",
-      description:
-        "FabThread is an eCommerce platform I built using React.js, React Query, React Router, and Supabase. It provides a seamless shopping experience with dynamic product listings, user authentication, and real-time database interactions",
-      tags: ["React", "Redux", "React Query", "React Router", "Supabase"],
-      links: [
-        { href: "https://fabthread.vercel.app/", label: "Live" },
-        { href: "https://github.com/Bhavesh210996/The-Fab-Thread-ecomm", label: "GitHub" },
-      ],
-      icon: React.createElement(Database),
-      details: [
-        "Developed FabThread, a modern eCommerce platform using React, React Query, Redux, Context API, React Router, and Supabase.",
-        "Utilized React Query for server-side state handling, ensuring real-time data fetching, caching, and synchronization.",
-        "Utilized React lazy loading and code-splitting, reducing initial bundle size and improving first load performance by 40%",
-        "Integrated Supabase’s cloud-hosted authentication and graphQl database to enable secure user login and reliable backend data operations."
-      ]
-    },
-  ],
-  awards: [
-    "Star of the Month — TCS",
-    "On‑the‑Spot Award (twice) — TCS",
-  ],
-} satisfies DataType;
+    "Frontend Developer with 4.5+ years building scalable, high-performance React and Next.js apps for enterprise clients including Verizon, Honeywell and Mastercard.",
+  resume: "/React-developer-Bhavesh_Bafana.pdf",
+  email: "bafanabrb@gmail.com",
+  phone: "+91 8805798998",
+  linkedin: "https://www.linkedin.com/in/bhaveshbafana",
+  education: { degree: "B.E. Mechanical Engineering", school: "Savitribai Phule Pune University", year: 2020 },
+};
+
+export const SKILLS: { group: string; items: string[] }[] = [
+  { group: "Web Technologies", items: ["JavaScript", "TypeScript", "HTML5", "CSS3"] },
+  {
+    group: "Libraries & Frameworks",
+    items: ["React", "Redux", "Next.js", "React Query", "React Router", "jQuery", "LESS", "GraphQL", "REST API", "Jest", "React Testing Library"],
+  },
+  { group: "Databases", items: ["MySQL", "PostgreSQL"] },
+  { group: "Tools", items: ["Git", "GitHub", "Bitbucket", "Jira", "Figma", "VS Code"] },
+];
+
+export const JOBS: Job[] = [
+  {
+    company: "Infosys",
+    short: "Infosys",
+    tile: "INFY",
+    role: "Senior Associate Consultant",
+    from: "2025-11",
+    summary: "Modernizing legacy applications for Verizon by migrating them into an existing production React application.",
+    projects: ["Verizon"],
+  },
+  {
+    company: "Tata Consultancy Services",
+    short: "TCS",
+    tile: "TCS",
+    role: "Software Engineer",
+    from: "2022-05",
+    to: "2025-10",
+    summary:
+      "Built and optimized enterprise web experiences for Honeywell, Mastercard and Exelon, from high-traffic e-commerce pages to reusable media components.",
+    projects: ["Honeywell", "Mastercard", "Exelon"],
+    awards: ["Star of the Month", "On-the-Spot ×2"],
+  },
+];
+
+export const CLIENT_PROJECTS: Project[] = [
+  {
+    title: "Verizon — Application Modernization",
+    org: "Infosys · Client project",
+    copy: "Migrating two legacy applications into an existing production React app alongside its wireless workflows, with dedicated routing and a separate Redux store that keeps the new flow isolated.",
+    tags: ["React", "Redux", "REST API", "PostgreSQL"],
+  },
+  {
+    title: "Honeywell Building Solutions",
+    org: "TCS · Client project",
+    copy: "B2B e-commerce platform. Developed and optimized the Cart, Product Detail, Checkout and Order Confirmation pages, plus data tables built for large datasets.",
+    tags: ["React", "Redux", "JavaScript"],
+  },
+  {
+    title: "Mastercard — Currency Conversion",
+    org: "TCS · Client project",
+    copy: "A responsive currency conversion page that converts in real time as users change currencies and amounts, with animated dropdowns and transitions, working across browsers.",
+    tags: ["JavaScript", "HTML5", "CSS3"],
+  },
+  {
+    title: "Exelon Corporation",
+    org: "TCS · Client project",
+    copy: "Reusable, responsive React components for multimedia content, including video cards that autoplay on hover and pause on leave using the HTML5 video API.",
+    tags: ["React", "HTML5", "CSS3"],
+    video: true,
+  },
+];
+
+export const PERSONAL_PROJECTS: Project[] = [
+  {
+    title: "Mauli — Pregnancy Care App",
+    copy: "A mobile-first maternal health app in English, Hindi and Marathi for rural and semi-urban patients, with symptom tracking, reminders and appointments, plus AI guidance kept safe by a rule-based risk engine.",
+    tags: ["Next.js", "React", "TypeScript", "Supabase", "LLM API"],
+  },
+  {
+    title: "Garden OS — Smart Gardening Assistant",
+    copy: "A cross-platform gardening app with plant, seed and harvest tracking and offline support, backed by a rules engine that schedules daily care for about 140 plant species using growth stage, season and live weather.",
+    tags: ["React Native (Expo)", "TypeScript", "Node.js", "PostgreSQL", "Prisma"],
+  },
+  {
+    title: "Pitchside — 3D Stadium Seat Selection",
+    copy: "See your seat before you book. A cricket ticketing concept where you rotate a full 3D stadium, tap any seat and see the exact match-day view before paying.",
+    tags: ["React", "React Three Fiber", "Three.js", "Drei", "GSAP", "Zustand", "Vite"],
+    links: [{ label: "GitHub", href: "https://github.com/devbrb/Cricket-match-ticket-booking" }],
+  },
+  {
+    title: "AI Code Guard",
+    org: "Open source",
+    copy: "An AI agent skill that reviews every code change against the repository it lands in, and catches security, performance and maintainability problems before they ship.",
+    tags: ["Node.js", "JavaScript", "AI agents", "Git", "ESLint", "npm"],
+    links: [
+      { label: "GitHub", href: "https://github.com/devbrb/ai-code-guard-skill" },
+      { label: "npm", href: "https://www.npmjs.com/package/ai-code-guard-skill" },
+    ],
+  },
+  {
+    title: "3D Train Seat Booking",
+    copy: "Pick a travel class and book berths in a 3D Indian Railways coach from three synced views: an orbit model, an eye-level walkthrough down the aisle, and an exploded floor plan. All five classes, from General to 1AC, are modelled to real interior dimensions.",
+    tags: ["React", "React Three Fiber", "Three.js", "Drei", "Zustand", "Vite"],
+    links: [{ label: "GitHub", href: "https://github.com/devbrb/3D-train-seat-booking-concept" }],
+  },
+  {
+    title: "Fab Thread — eCommerce",
+    copy: "An eCommerce platform with dynamic product listings, user authentication, and real-time database interactions.",
+    tags: ["React", "Redux", "React Query", "React Router", "Supabase"],
+    links: [
+      { label: "Live", href: "https://fabthread.vercel.app/" },
+      { label: "GitHub", href: "https://github.com/Bhavesh210996/The-Fab-Thread-ecomm" },
+    ],
+  },
+];
+
+export const AWARDS = ["Star of the Month", "On-the-Spot Award (twice)"];
